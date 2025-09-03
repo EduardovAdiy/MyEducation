@@ -46,7 +46,7 @@ async function readLine(inputText) {
 
 async function inputValidator (input, validator, errorQuery) {
     if(validator(input) === true) {
-        return input;
+        return new Promise(resolve => {resolve(input)});
     }
     else {
         const errorResult = await readLine(errorQuery);
