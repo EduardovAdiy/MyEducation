@@ -1,7 +1,7 @@
 import readline from 'node:readline';
 
 //Рандомайзер чисел в заданном диапазоне;
-function getRandomNumber (startNum, endNum) {
+async function getRandomNumber (startNum, endNum) {
     let startNumber = startNum;
     let endNumber = endNum;
     let middleNumber = 0;
@@ -31,24 +31,27 @@ function getRandomNumber (startNum, endNum) {
 
     return result;
 };
-
-//Создаем пользовательский интерфейс для ввода длины массива;
+//Создаем пользовательский интерфейс;
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-//Функция для ввода длины массива;
-function inputConsoleValues (query, validator, newQuery) {
-  
-    //Блок ввода данных;
-    rl.question(query, inputNumber =>{
-        if(validator(inputNumber)) {
-            rl.close();
-            return inputNumber;            
-        } else {
-            inputConsoleValues (newQuery,validator, newQuery);
-        }
-    });
-}
 
-export {getRandomNumber, inputConsoleValues};
+//Функция для ввода данных;
+async function readLine(inputText) {
+    return new Promise(resolve => {
+        rl.question(inputText, answer => { resolve(answer); });
+    });
+};
+
+async function inputValidator (input, validator, errorQuery) {
+    if(validator(input)) {
+        return input;
+    }
+    else {
+        const errorResult = await readLine(errorQuery);
+        await inputValidator(errorResult, validator, errorQuery);
+    }
+};
+
+export {getRandomNumber, readLine, inputValidator};
