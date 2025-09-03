@@ -45,7 +45,7 @@ async function readLine(inputText) {
 };
 
 async function inputValidator (input, validator, errorQuery) {
-    if(validator(input)) {
+    if(validator(input) === true) {
         return input;
     }
     else {
