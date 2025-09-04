@@ -46,11 +46,11 @@ async function readLine(inputText) {
 
 async function inputValidator (input, validator, errorQuery) {
     if(validator(input) === true) {
-        return new Promise(resolve => {resolve(input)});
+        return input;
     }
     else {
         const errorResult = await readLine(errorQuery);
-        await inputValidator(errorResult, validator, errorQuery);
+        return await inputValidator(errorResult, validator, errorQuery);     
     }
 };
 
