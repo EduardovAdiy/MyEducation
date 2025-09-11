@@ -71,7 +71,86 @@ const inputNumber = await myFuns.inputValidator(
 const numberArray = inputNumber.split(',');
 console.log('Получен массив чисел: ');
 console.log(numberArray);
+console.log('Оставляем только числа, которые делятся на 5 ...');
+console.log('Получен массив:')
+console.log(numberArray.filter(element => (Number(element) % 5 === 0)));
+console.log('---');
 
+console.log('Оставляем числа которые содержат 0 ...');
+console.log('Получен массив: ');
+console.log(numberArray.filter(element => (element.indexOf("0") >= 0)));
+console.log('---');
+
+const newArray = numberArray.filter(element => (element.indexOf("3") >= 0));
+console.log('Проверяем, что в исходном массиве есть числа, содержащие цифру 3 ...');
+if(newArray.length > 1){
+    console.log('Исходный массив содержит числа имеющие в составе цифру 3.');
+}else {
+    console.log('Исходный массив НЕ содержит числа, имеющие в составе цифру 3.');
+};
+console.log('---');
+
+const inputNumberForSort = await myFuns.inputValidator(
+    await myFuns.readLine('Введите число (более 10 000): '),
+    input => input > 10000,
+    'Ошибка! Введите число (более 10 000): '
+);
+console.log('Сортируем цифры в числе в порядке возрастания ...');
+console.log(Number(String(inputNumberForSort).split('').sort().join('')));
+console.log('---');
+
+let obj = {
+	1: {
+		1: {
+			1: 111,
+			2: 112,
+			3: 113,
+		},
+		2: {
+			1: 121,
+			2: 122,
+			3: 123,
+		},
+	},
+	2: {
+		1: {
+			1: 211,
+			2: 212,
+			3: 213,
+		},
+		2: {
+			1: 221,
+			2: 222,
+			3: 223,
+		},
+	},
+	3: {
+		1: {
+			1: 311,
+			2: 312,
+			3: 313,
+		},
+		2: {
+			1: 321,
+			2: 322,
+			3: 323,
+		},
+	},
+};
+console.log('Получен объект: ');
+console.log(obj);
+console.log('Вычисляем сумму элементов объекта ...');
+let objSum = 0;
+for(let i in obj) {
+    let subObj_1 = obj[i];
+    for(let j in subObj_1){
+        for(let k = 1; k < 3; k++){
+            objSum = objSum + subObj_1.k;
+        };
+    }
+}
+console.log(`Сумма элементов объекта равна: ${objSum}`);
+console.log('---');
 //Process exit;
 console.log('Завершение работы ...');
 process.exit(0);
