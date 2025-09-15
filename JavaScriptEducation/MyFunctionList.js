@@ -43,7 +43,7 @@ async function readLine(inputText) {
         rl.question(inputText, answer => { resolve(answer); });
     });
 };
-
+//Функция ввода данных с валидатором и обработчиком ошибок;
 async function inputValidator (input, validator, errorQuery) {
     if(validator(input) === true) {
         return input;
@@ -53,5 +53,13 @@ async function inputValidator (input, validator, errorQuery) {
         return await inputValidator(errorResult, validator, errorQuery);     
     }
 };
+//Функция для проверка вхождения числа в промежуток;
+async function isBetween(inputValue, startValue, endValue) {
+    if(inputValue >= startValue && inputValue <= endValue){
+        return true;
+    } else {
+        return false;
+    }
+}
 
-export {getRandomNumber, readLine, inputValidator};
+export {getRandomNumber, readLine, inputValidator, isBetween};
