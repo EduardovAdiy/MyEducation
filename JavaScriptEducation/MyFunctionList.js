@@ -75,30 +75,30 @@ async function getNumberValues (minValue, maxValue) {
     let baseQuestion = 'Введите число';
     let dopQuestion = '';
     if(minValue !== undefined && maxValue === undefined) dopQuestion = ` (не менее ${minValue})`;
-    if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue})`;
+    if((minValue === 0 || minValue === undefined) && maxValue !== undefined) dopQuestion = ` (не более ${maxValue})`;
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue})`;
 
     const inputNumberText = await inputValidator(
             await readLine(`${baseQuestion}${dopQuestion}:`),
-            input => (isNaN(input) === false && (input >= minValue || minValue === 0) && (input <= maxValue || maxValue === undefined)),
+            input => (isNaN(input) === false && (input >= minValue || minValue === 0 || minValue === undefined) && (input <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
-    return inputNumberText.toNumber();
+    return Number(inputNumberText);
 };
 //Функция на запрос текста;
 async function getTextValues (minValue, maxValue) {
     let baseQuestion = 'Введите произвольную строку';
     let dopQuestion = '';
     if(minValue !== undefined && maxValue === undefined) dopQuestion = ` (не менее ${minValue} символов)`;
-    if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue} символов)`;
+    if((minValue === 0 || minValue === undefined) && maxValue !== undefined) dopQuestion = ` (не более ${maxValue} символов)`;
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue} символов)`;
 
     const inputText = await inputValidator(
             await readLine(`${baseQuestion}${dopQuestion}:`),
-            input => (isNaN(input) === true && (input.length >= minValue || minValue === 0) && (input.length <= maxValue || maxValue === undefined)),
+            input => (isNaN(input) === true && (input.length >= minValue || minValue === 0 || minValue === undefined) && (input.length <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
-    return inputText.toString();
+    return String(inputText);
 };
 //Функция на запрос даты;
 async function getDateValues () {
