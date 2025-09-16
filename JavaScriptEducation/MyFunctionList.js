@@ -113,6 +113,37 @@ async function getDateValues () {
 
     return inputDate;
 };
+//Функция возращающая знак зодиака по дате;
+function getZodiakFromDate (inputDate) {
+    const date = new Date(inputDate);
+    const inputMonth = (date.getMonth() + 1);
+    const inputDay = date.getDate();
+    const zodiacArray = [
+        {"name" : "Овен", "month" : 3},
+        {"name" : "Телец", "month" : 4},
+        {"name" : "Близнецы", "month" : 5},
+        {"name" : "Рак", "month" : 6},
+        {"name" : "Лев", "month" : 7},
+        {"name" : "Дева", "month" : 8},
+        {"name" : "Весы", "month" : 9},
+        {"name" : "Скорпион", "month" : 10},
+        {"name" : "Стрелец", "month" : 11},
+        {"name" : "Козерог", "month" : 12},
+        {"name" : "Водолей", "month" : 1},
+        {"name" : "Рыбы", "month" : 2},
+    ];
+    let needMonth = inputMonth;
+    if(inputDay < 21){
+        needMonth = needMonth - 1;
+        if(needMonth === 13){
+            needMonth = 1;
+        };
+        if (needMonth === 0) {
+            needMonth = 12;
+        }
+    };
 
+    return zodiacArray.find(months => months.month === needMonth).name;
+};
 
-export {getRandomNumber, readLine, inputValidator, isBetween, getArrayNumberValues, getNumberValues, getTextValues, getDateValues};
+export {getRandomNumber, readLine, inputValidator, isBetween, getArrayNumberValues, getNumberValues, getTextValues, getDateValues, getZodiakFromDate};
