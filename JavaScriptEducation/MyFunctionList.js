@@ -79,7 +79,7 @@ async function getNumberValues (minValue, maxValue) {
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue})`;
 
     const inputNumberText = await inputValidator(
-            await readLine(`${baseQuestion}${dopQuestion}:`),
+            await readLine(`${baseQuestion}${dopQuestion}: `),
             input => (isNaN(input) === false && (input >= minValue || minValue === 0 || minValue === undefined) && (input <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
@@ -94,7 +94,7 @@ async function getTextValues (minValue, maxValue) {
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue} символов)`;
 
     const inputText = await inputValidator(
-            await readLine(`${baseQuestion}${dopQuestion}:`),
+            await readLine(`${baseQuestion}${dopQuestion}: `),
             input => (isNaN(input) === true && (input.length >= minValue || minValue === 0 || minValue === undefined) && (input.length <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
@@ -105,7 +105,7 @@ async function getDateValues () {
     let baseQuestion = 'Введите дату в формате "ГГГГ-ММ-ДД"';
  
     const inputDateText = await inputValidator(
-            await readLine(`${baseQuestion}:`),
+            await readLine(`${baseQuestion}: `),
             input => (!isNaN(new Date(String(input)))),
             `Ошибка! Введены некорректные данные! ${baseQuestion}: `
         );
