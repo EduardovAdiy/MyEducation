@@ -63,8 +63,8 @@ async function isBetween(inputValue, startValue, endValue) {
 }
 //Функция на запрос массива;
 async function getArrayNumberValues () {
-    const inputArrayText = await myFunc.inputValidator(
-            await myFunc.readLine('Введите массив цифр через запятую (1,2,3...): '),
+    const inputArrayText = await inputValidator(
+            await readLine('Введите массив цифр через запятую (1,2,3...): '),
             input => (/^[0-9]+((,|, )[0-9]+){2,}$/).test(input),
             'Ошибка! Введены некорректные данные! Введите массив цифр через запятую (1,2,3...): '
         );
@@ -78,8 +78,8 @@ async function getNumberValues (minValue, maxValue) {
     if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue})`;
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue})`;
 
-    const inputNumberText = await myFunc.inputValidator(
-            await myFunc.readLine(`${baseQuestion}${dopQuestion}:`),
+    const inputNumberText = await inputValidator(
+            await readLine(`${baseQuestion}${dopQuestion}:`),
             input => (isNaN(input) === false && (input >= minValue || minValue === 0) && (input <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
@@ -93,8 +93,8 @@ async function getTextValues (minValue, maxValue) {
     if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue} символов)`;
     if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue} символов)`;
 
-    const inputText = await myFunc.inputValidator(
-            await myFunc.readLine(`${baseQuestion}${dopQuestion}:`),
+    const inputText = await inputValidator(
+            await readLine(`${baseQuestion}${dopQuestion}:`),
             input => (isNaN(input) === true && (input.length >= minValue || minValue === 0) && (input.length <= maxValue || maxValue === undefined)),
             `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
         );
@@ -104,13 +104,13 @@ async function getTextValues (minValue, maxValue) {
 async function getDateValues () {
     let baseQuestion = 'Введите дату в формате "ГГГГ-ММ-ДД"';
  
-    const inputDateText = await myFunc.inputValidator(
-            await myFunc.readLine(`${baseQuestion}:`),
+    const inputDateText = await inputValidator(
+            await readLine(`${baseQuestion}:`),
             input => (!isNaN(new Date(String(input)))),
             `Ошибка! Введены некорректные данные! ${baseQuestion}: `
         );
     let inputDate = new Date(inputDateText);
-    
+
     return inputDate;
 };
 
