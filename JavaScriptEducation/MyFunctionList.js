@@ -61,5 +61,58 @@ async function isBetween(inputValue, startValue, endValue) {
         return false;
     }
 }
+//Функция на запрос массива;
+async function getArrayNumberValues () {
+    const inputArrayText = await myFunc.inputValidator(
+            await myFunc.readLine('Введите массив цифр через запятую (1,2,3...): '),
+            input => (/^[0-9]+((,|, )[0-9]+){2,}$/).test(input),
+            'Ошибка! Введены некорректные данные! Введите массив цифр через запятую (1,2,3...): '
+        );
+    return inputArrayText.split(',').map(Number);
+};
+//Функция на запрос числа;
+async function getNumberValues (minValue, maxValue) {
+    let baseQuestion = 'Введите число';
+    let dopQuestion = '';
+    if(minValue !== undefined && maxValue === undefined) dopQuestion = ` (не менее ${minValue})`;
+    if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue})`;
+    if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue})`;
 
-export {getRandomNumber, readLine, inputValidator, isBetween};
+    const inputNumberText = await myFunc.inputValidator(
+            await myFunc.readLine(`${baseQuestion}${dopQuestion}:`),
+            input => (isNaN(input) === false && (input >= minValue || minValue === 0) && (input <= maxValue || maxValue === undefined)),
+            `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
+        );
+    return inputNumberText.toNumber();
+};
+//Функция на запрос текста;
+async function getTextValues (minValue, maxValue) {
+    let baseQuestion = 'Введите произвольную строку';
+    let dopQuestion = '';
+    if(minValue !== undefined && maxValue === undefined) dopQuestion = ` (не менее ${minValue} символов)`;
+    if(minValue === 0 && maxValue !== undefined) dopQuestion = ` (не более ${maxValue} символов)`;
+    if(minValue !== undefined && maxValue !== undefined) dopQuestion = ` (от ${minValue} до ${maxValue} символов)`;
+
+    const inputText = await myFunc.inputValidator(
+            await myFunc.readLine(`${baseQuestion}${dopQuestion}:`),
+            input => (isNaN(input) === true && (input.length >= minValue || minValue === 0) && (input.length <= maxValue || maxValue === undefined)),
+            `Ошибка! Введены некорректные данные! ${baseQuestion}${dopQuestion}: `
+        );
+    return inputText.toString();
+};
+//Функция на запрос даты;
+async function getDateValues () {
+    let baseQuestion = 'Введите дату в формате "ГГГГ-ММ-ДД"';
+ 
+    const inputDateText = await myFunc.inputValidator(
+            await myFunc.readLine(`${baseQuestion}:`),
+            input => (!isNaN(new Date(String(input)))),
+            `Ошибка! Введены некорректные данные! ${baseQuestion}: `
+        );
+    let inputDate = new Date(inputDateText);
+    
+    return inputDate;
+};
+
+
+export {getRandomNumber, readLine, inputValidator, isBetween, getArrayNumberValues, getNumberValues, getTextValues, getDateValues};
