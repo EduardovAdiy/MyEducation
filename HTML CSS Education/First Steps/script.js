@@ -23,4 +23,9 @@ function getUserName() {
     document.getElementById('userName').innerHTML = `Привет, ${userName}!`;
 };
 
+function goAway() {
+	document.getElementById('littleBaby').innerHTML = 'Королева уходит';
+	document.getElementById('img1').src = 'img2.jpeg';
+};
+
 window.onload = getUserName();
