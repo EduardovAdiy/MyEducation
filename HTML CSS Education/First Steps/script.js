@@ -24,8 +24,16 @@ function getUserName() {
 };
 
 function goAway() {
-	document.getElementById('littleBaby').innerHTML = 'Королева уходит';
-	document.getElementById('img1').src = 'img2.jpeg';
+    const dates = document.getElementById('imgId').innerHTML;
+    if(dates === 'Хомяк уходит'){
+        document.getElementById('imgId').innerHTML = 'Хомяк на месте';
+	    document.getElementById('img1').src = 'img1.jpg';
+        document.getElementById('goAway').innerHTML = 'На выход';
+    } else {
+        document.getElementById('imgId').innerHTML = 'Хомяк уходит';
+	    document.getElementById('img1').src = 'img2.jpg';
+        document.getElementById('goAway').innerHTML = 'Вернуть обратно';
+    }
 };
 
 window.onload = getUserName();
