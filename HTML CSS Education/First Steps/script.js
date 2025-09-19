@@ -1,7 +1,10 @@
  'use strict';
 
  function promtMessage() {
+        console.log(`Запущена функция promtMessage() ...`);
             const mess =  prompt('Сколько тебе лет?');
+            console.log(`Получено значение для переменной mess - ${mess} ...`);
+
             if(/^[0-9]+$/.test(mess) === true){
                 const conf = confirm(`Тебе точно ${mess} лет?`);
                 if(conf === true){
