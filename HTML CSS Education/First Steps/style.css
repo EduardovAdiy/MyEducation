@@ -1,4 +1,21 @@
+/* CSS по тэгу */
 p {
     color:brown;
     font-size: 20px;
+    font-style: italic;
+}
+/* CSS по классу */
+.button {
+    color:darkblue;
+    background-color: bisque;
+    border-style: double;
+    border-color: burlywood;
+}
+/* CSS по ID */
+#img1 {
+    border: 8px;
+    border-style: groove;
+    border-color: rgb(245, 102, 102);
+    width: 20%;
+
 }
