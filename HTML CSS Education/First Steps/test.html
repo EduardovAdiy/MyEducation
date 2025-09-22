@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -22,11 +23,23 @@
 	<h1 id="main">Main text</h1>
 	<p>В этом месте должен быть размещен основнгй текст</p>
 	<form>
-		<label for="text">Текст: </label><input type="text" id="text"><br>
-		<label for="radio">Выберите данные: </label><input type="radio" id="radio"><br>
-		<label for="check">Чек-бокс: </label><input type="checkbox" id="check"><br>
+		<label for="text">Текст: </label><input type="text" id="text" onchange="printTextValueOnChange()"><br>
+		<label>Укажите пол: </label>
+        <label for="rd1">муж. </label><input type="radio" id="rd1" onchange="changeRadioValue2()"> 
+        <label for="rd2">жен. </label><input type="radio" id="rd2" onchange="changeRadioValue1()"> 
+        <br>
+		<label for="check">Чек-бокс: </label><input type="checkbox" id="check" onchange="printCheckBoxValue()"><br>
+        <label for="selector">Выберите вариант из списка: </label>
+        <select id="selector" name="selector" onchange="printSelectorValue()">
+            <option value="1">Вариант 1</option>
+            <option value="2">Вариант 2</option>
+            <option value="3">Вариант 3</option>
+        </select><br><br>
+        <input type="submit" onclick="submitDates()">
 	</form>
+    
 	<h1 id="about">About this page</h1>
 	<p>В этом блоке должна быть информация о странице</p>
+    <script src="script.js"></script>
 </body>
 </html>
