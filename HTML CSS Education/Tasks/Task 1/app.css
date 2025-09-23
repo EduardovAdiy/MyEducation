@@ -1,0 +1,35 @@
+body {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+h1 {
+    text-align: center;
+    font-style: bold;
+    font-size: 33px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+main p {
+    text-align: justify;
+    padding: 3%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(248, 250, 250) ;
+
+    border: 1px solid #b3e0ff;
+}
+
+div {
+    
+}
+
+main {
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+footer {
+    text-align: center;
+    color: rgb(99, 54, 54);
+    font-size: 14px;
+}
