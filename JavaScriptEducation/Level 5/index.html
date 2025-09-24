@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Eduardov Adiy">
+        <title>Уровень 5.1</title>
+
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body onload="randomNum('solTwoNumber'), randomNum('solThreeNumber1'), randomNum('solThreeNumber2'),
+    randomNum('solFourNumber1'), randomNum('solFourNumber2')" >
+        <header>
+            <h1>Уровень 5.1 задачника JavaScript</h1>
+        </header>
+        <main>
+            <div class="task">
+                <h1>
+                    №1
+                </h1>
+                <p>
+                    Даны два инпута, абзац и кнопка. В инпуты вводятся числа. 
+                    По нажатию на кнопку выведите в абзац сумму этих чисел.
+                </p>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div>
+                        <form>
+                            <label for="solOneFirstNumber">Введите число 1: </label>
+                            <input type="text" id="solOneFirstNumber" oninput="isNumber('solOneFirstNumber')">
+                            <br>
+                            <label for="solOneSecondNumber">Введите число 2: </label>
+                            <input type="text" id="solOneSecondNumber" oninput="isNumber('solOneSecondNumber')">
+                            <br>
+                            <p id="solOneParagraph"></p>
+                        </form>
+                        <div class="button">
+                            <button onclick="getNumberSumToParagraph ('solOneFirstNumber', 'solOneSecondNumber', 'solOneParagraph')">Посчитать сумму</button>
+                            <button onclick="getClear()">Очистить</button>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+            <div class="task">
+                <h1>
+                    №2
+                </h1>
+                <p>
+                    Дан абзац с числом и кнопка. По нажатию на кнопку возведите текст абзаца в квадрат.
+                </p>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div class="flex">
+                        <p>Абзац c числом: </p><p id="solTwoNumber"></p>
+                    </div>
+
+                    <div class="button">
+                            <button onclick="getSqrtNum('solTwoNumber')">Возвести в квадрат</button>
+                            <button onclick="getClear()">Обновить</button>
+                    </div>
+                </div>         
+            </div>
+            <div class="task">
+                <h1>
+                    №3
+                </h1>
+                <p>
+                    Дан абзацы с числами, абзац и кнопка. По нажатию на кнопку найдите сумму значений абзацев и запишите ее в абзац.
+                </p>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div class="flex">
+                        <p>Абзац c числом 1: </p><p id="solThreeNumber1"></p>
+                    </div>
+                    <div class="flex">
+                        <p>Абзац c числом 2: </p><p id="solThreeNumber2"></p>
+                    </div>
+                    <p id="solThreeNumberSum"></p>
+
+                    <div class="button">
+                            <button onclick="getNumberSumToParagraph ('solThreeNumber1', 'solThreeNumber2', 'solThreeNumberSum')">Сумма абзацев</button>
+                            <button onclick="getClear()">Обновить</button>
+                    </div>
+                </div>         
+            </div>
+            <div class="task">
+                <h1>
+                    №4
+                </h1>
+                <p>
+                    Даны абзацы с числами. Сделайте так, чтобы по клику на любой абзац его значение возводилось в квадрат.
+                </p>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div class="flex">
+                        <p>Абзац c числом 1: </p><p id="solFourNumber1" onclick="getSqrtNum('solFourNumber1')"></p>
+                    </div>
+                    <div class="flex">
+                        <p>Абзац c числом 2: </p><p id="solFourNumber2" onclick="getSqrtNum('solFourNumber2')"></p>
+                    </div>
+                     <div class="button">
+                            <button onclick="getClear()">Обновить</button>
+                        </div>
+                </div>         
+            </div>
+            <div class="task">
+                <h1>
+                    №5
+                </h1>
+                <p>
+                    Даны инпуты, в которые вводятся числа. Сделайте так, чтобы по потери фокуса в любом инпуте его значение возводилось в квадрат.
+                </p>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div>
+                        <form>
+                            <label for="solFiveFirstNumber">Введите число 1: </label>
+                            <input type="text" id="solFiveFirstNumber" oninput="isNumber('solFiveFirstNumber')" onblur="getSqrtNum('solFiveFirstNumber')">
+                            <br>
+                            <label for="solFiveSecondNumber">Введите число 2: </label>
+                            <input type="text" id="solFiveSecondNumber" oninput="isNumber('solFiveSecondNumber')" onblur="getSqrtNum('solFiveSecondNumber')">
+                    </form>
+                    </div>
+                </div>         
+            </div>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
