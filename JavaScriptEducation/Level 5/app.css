@@ -43,13 +43,22 @@ button {
     margin-bottom: 2%;
     margin-right: 2%;
     margin-top: 2%;
+    background-color: rgb(210, 219, 219); 
+    border-radius: 3px;
+    width: 30%;
+    color:rgb(50, 40, 145);
+}
+
+button:active {
+    background-color: white;
+    color:black;
 }
 input {
     margin-bottom: 1%;
 }
 .button {
     display: flex;
-    justify-content:space-between; 
+    justify-content:space-between;
 }
 .flex {
     display: flex;
