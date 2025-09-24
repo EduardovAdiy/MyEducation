@@ -27,6 +27,7 @@ main {
     padding-top: auto;
     font-size: 12px;
     background-color: rgb(220, 240, 243);
+    text-align: justify;
 }
 
 footer p {
