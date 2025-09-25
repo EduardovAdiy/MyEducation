@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Eduardov Adiy">
+
+        <title>Task 5.3</title>
+
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body onload="generateParagraph('emptyPar')">
+        <header>
+            <h1>Уровень 5.3 задачника JavaScript</h1>
+        </header>
+        <main>
+            <div class="wraper">
+                <div class="task">
+                    <h2>№1</h2>
+                    <p>
+                        Дан абзац, инпут и кнопка. В инпут вводится число. По нажатию на кнопку выведите в абзац факториал введенного числа.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solOne')">Приступить</button>
+                    </div>
+                    <div class="popup-overlay" id="solOne">
+                         <div class="popup"> 
+                            <div class="solution">
+                                <p id="solOneValue">Тут отобразится факториал введенного числа!</p>
+                                <form>
+                                    <label for="input">Введите число (от 1 до 100): </label>
+                                    <input type="text" id="input1" oninput="isNumber('input1')">
+                                </form>
+                                <div class="button">
+                                    <button onclick="getFactorial('input1', 'solOneValue')">Факториал</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                         </div> 
+                    </div>
+                </div>
+                <div class="task">
+                    <h2>№2</h2>
+                    <p>
+                        Даны два инпута, кнопка и абзац. В инпуты вводятся целые числа. Определите, 
+                        какое из введенных чисел больше и выведите его в абзац.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solTwo')">Приступить</button>
+                    </div>
+
+                    <div class="popup-overlay" id="solTwo">
+                         <div class="popup"> 
+                            <div class="solution">
+                                <form>
+                                    <label for="input">Введите число 1: </label>
+                                    <input type="text" id="input2.1" oninput="isNumber('input2.1')">
+                                    <br><br>
+                                    <label for="input">Введите число 2: </label>
+                                    <input type="text" id="input2.2" oninput="isNumber('input2.2')">
+                                </form>
+                                <p id="solTwoValue">Тут отобразится большее из чисел!</p>
+                                <div class="button">
+                                    <button onclick="getMaxNumber('input2.1', 'input2.2', 'solTwoValue')">Поиск</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                         </div> 
+                    </div>
+                </div>
+                <div class="task">
+                    <h2>№3</h2>
+                    <p>
+                        Дана кнопка и инпут. В инпут вводится число. По нажатию на кнопку найдите сумму цифр введеного числа.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solThree')">Приступить</button>
+                    </div>
+
+                    <div class="popup-overlay" id="solThree">
+                        <div class="popup">
+                            <div class="solution">
+                                <form>
+                                    <label for="input3">Введите число: </label>
+                                    <input type="text" oninput="isNumber('input3')" id="input3">
+                                </form>
+                                <p id="solThreeValue"></p>
+                                <div class="button">
+                                    <button onclick="getSumNumber('input3', 'solThreeValue')">Найти сумму</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task">
+                    <h2>№4</h2>
+                    <p>
+                        Дан абзац, инпут и кнопка. В инпут вводится слово. По нажатию на кнопку переверните слово и запишите его в абзац.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solFour')">Приступить</button>
+                    </div>
+
+                    <div class="popup-overlay" id="solFour">
+                        <div class="popup">
+                            <div class="solution">
+                                <form>
+                                    <label for="input4">Введите строку: </label>
+                                    <input type="text" id="input4">
+                                </form>
+                                <p id="solFourValue">Тут отобразится перевернутный текст!</p>
+
+                                <div class="button">
+                                    <button onclick="getReverseString('input4', 'solFourValue')">Перевернуть</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task">
+                    <h2>№5</h2>
+                    <p>
+                        Даны пустые абзацы и кнопка. По нажатию на кнопку заполните абзацы числами по порядку.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solFive')">Приступить</button>
+                    </div>
+
+                    <div class="popup-overlay" id="solFive">
+                        <div class="popup">
+                            <div class="solution">
+                                <div id="emptyPar">
+
+                                </div>
+
+                                <div class="button">
+                                    <button onclick="getParagraphNum('auto-gen')">Заполнить числами</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="task">
+                    <h2>№6</h2>
+                    <p>
+                        Дан инпут, абзац и кнопка. В инпут вводится число. По клику на кнопку выведите в абзац факториал этого числа.
+                    </p>
+
+                    <div class="button">
+                        <button onclick="showSolutionWindow('solSix')">Приступить</button>
+                    </div>
+
+                    <div class="popup-overlay" id="solSix">
+                         <div class="popup"> 
+                            <div class="solution">
+                                <p id="solSixValue">Тут отобразится факториал введенного числа!</p>
+                                <form>
+                                    <label for="input6">Введите число (от 1 до 100): </label>
+                                    <input type="text" id="input6" oninput="isNumber('input6')">
+                                </form>
+                                <div class="button">
+                                    <button onclick="getFactorial('input6', 'solSixValue')">Факториал</button>
+                                    <button onclick="hideSolutionWindow()">Закрыть</button>
+                                </div>
+                            </div>
+                         </div> 
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
