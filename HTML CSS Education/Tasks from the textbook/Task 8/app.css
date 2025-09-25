@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+.base-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30%;
+    padding-right:  30%;
+  
+}
+
+.block {
+      width: 100%;
+      background-color: white;
+      border: 1px solid rgb(223, 222, 222);
+      padding-left: 3%;
+      padding-right: 3%;
+      font-family: Arial;
+      text-align: justify;
+      line-height: 25px;
+      margin-bottom: 2%;
+}
+
+.href {
+    display:flex;
+    justify-content: right;
+    font-size: 14px;
+    color: rgb(66, 124, 201);
+    font-style: normal;
+}
+
+footer {
+    text-align: center;
+    color: grey;
+}
