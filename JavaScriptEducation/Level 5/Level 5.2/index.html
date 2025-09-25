@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Eduardov Adiy">
+        <title>Уровень 5.2</title>
+
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body onload="generateParagraph('generateParagraph')">
+        <header>
+            <h1>Уровень 5.2 задачника JavaScript</h1>
+        </header>
+        <main>
+            <div class="wraper-block">
+                <div class="task">
+                    <h2>№1</h2>
+                    <p>Дан абзац и кнопка. По нажатию на кнопку найдите сумму чисел от 1 до 100 и запишите результат в абзац.</p>
+                </div>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <p id="sol1Value">Для отображения суммы числе от 1 до 100 нажмите на кнопку "Показать сумму"</p>
+                    <div class="button">
+                        <button onclick="getArraySum()">Показать сумму</button>
+                        <button onclick="reloadDocument()">Обновить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wraper-block">
+                <div class="task">
+                    <h2>№2</h2>
+                    <p>Дана кнопка и два инпута. В инпуты вводятся числа. По нажатию на кнопку найдите сумму введенных чисел.</p>
+                </div>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <form>
+                        <label for="sol2Number1">Введите число 1: </label>
+                        <input id="sol2Number1" type="text" oninput="isNumber('sol2Number1')">
+                        <label for="sol2Number2">Введите число 2: </label>
+                        <input id="sol2Number2" type="text" oninput="isNumber('sol2Number2')">
+                    </form>
+                    <br>
+                    <p id="sol2NumberSum"></p>
+                    <div class="button">
+                        <button onclick="getSum('sol2Number1','sol2Number2','sol2NumberSum')">Показать сумму</button>
+                        <button onclick="reloadDocument()">Обновить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wraper-block">
+                <div class="task">
+                    <h2>№3</h2>
+                    <p>Даны абзацы, кнопка и див. По нажатию на кнопку найдите количество абзацев и выведите это значение в див.</p>
+                </div>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <div id="generateParagraph">
+
+                    </div>
+                    <p id="countGenerateParagraph"></p>
+                    <div class="button">
+                        <button onclick="getCountParagraph()">Показать кол-во</button>
+                        <button onclick="reloadDocument()">Обновить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="wraper-block">
+                <div class="task">
+                    <h2>№4</h2>
+                    <p>Дана кнопка и инпут. В инпут вводится строка. По нажатию на кнопку определите, сколько символов в введенной строке.</p>
+                </div>
+                <div class="solution">
+                    <h2>Решение</h2>
+                    <form>
+                        <label for="inputText">Введите строку: </label>
+                        <input type="text" id="inputText" style="width: 70%; margin-bottom: 2%;">
+                    </form>
+                    <p id="stringLength"></p>
+
+                    <div class="button">
+                        <button onclick="getStringLength('inputText', 'stringLength')">Показать кол-во символов</button>
+                        <button onclick="reloadDocument()">Обновить</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
