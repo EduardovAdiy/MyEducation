@@ -1,0 +1,64 @@
+
+header h1 {
+    text-align: center;
+    background-color: rgb(180, 240, 240);
+    padding-bottom: 1%;
+    padding-top: 1%;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.base-conteiner {
+    width: 90%;
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.task {
+    width: 60%;
+    border: 1px solid rgb(173, 173, 173);
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+    background-color: rgb(217, 223, 228);
+}
+
+.task h2 {
+    text-align: center;
+}
+
+.task p {
+    text-align: justify;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.solution {
+    display:none;
+}
+
+.solution-visible {
+    text-align: center;
+    background-color: rgb(247, 247, 247);
+    width: 40%;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+.button {
+    display: flex;
+    justify-content:space-around;
+}

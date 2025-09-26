@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Eduardov Adiy">
+
+        <title>Task 5.4</title>
+
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body onload="generatePar('auto-genSol1'), generateHref('auto-genSol2')">
+        <header>
+            <h1>Уровень 5.4 задачника JavaScript</h1>
+        </header>
+        <main>
+            <div class="base-conteiner">
+                    <div class="task">
+                        <h2>№1</h2>
+                        <p>Даны абзацы с текстом. Сделайте так, чтобы по нажатию на любой абзац его текстом становилось значение '!'.</p>
+                        <div class="button">
+                            <button onclick="showForm('solution1')">Решение</button>
+                        </div>
+                    </div>
+                    
+                    <div class="solution" id="solution1">
+                        <div id="auto-genSol1" class="sol1">
+
+                        </div>
+                        <div class="button">
+                            <button onclick="hideForm('solution1')">Скрыть</button>
+                        </div>
+                    </div>
+
+                    <div class="task">
+                        <h2>№2</h2>
+                        <p>Даны ссылки и кнопка. По нажатию на кнопку получите массив атрибутов href ссылок.</p>
+                        <div class="button">
+                            <button onclick="showForm('solution2')">Решение</button>
+                        </div>
+                    </div>
+                    
+                    <div class="solution" id="solution2">
+                        <div id="auto-genSol2" class="sol2">
+
+                        </div>
+                        <br>
+                        <p id="sol2Value"></p>
+                        
+                        <div class="button">
+                            <button onclick="showHrefArr('gen-sol2', 'sol2Value')">Показать ссылки</button>
+                            <button onclick="hideForm('solution2')">Скрыть</button>
+                        </div>
+                    </div>
+
+                    <div class="task">
+                        <h2>№3</h2>
+                        <p>Дан абзац и кнопка. По нажатию на кнопку сделайте в цикле строку '123456789' и запишите ее в абзац.</p>
+                        <div class="button">
+                            <button onclick="showForm('solution3')">Решение</button>
+                        </div>
+                    </div>
+                    
+                    <div class="solution" id="solution3">
+                        <p id="sol3Value"></p>
+                        
+                        <div class="button">
+                            <button onclick="generatePrgrphValue('sol3Value')">Сгенерировать строку</button>
+                            <button onclick="hideForm('solution3')">Скрыть</button>
+                        </div>
+                    </div>
+                    
+                    <div class="task">
+                        <h2>№4</h2>
+                        <p>Даны три абзаца. Выведите в первый текущий год, во второй - текущий месяц, в третий - текущий день.</p>
+                        <div class="button">
+                            <button onclick="showForm('solution4')">Решение</button>
+                        </div>
+                    </div>
+                    
+                    <div class="solution" id="solution4">
+                        <p class="sol4">Абзац для текущего года: </p>
+                        <p class="sol4">Абзац для текущего месяца: </p>
+                        <p class="sol4">Абзац для текущего дня: </p>
+                        
+                        <div class="button">
+                            <button onclick="showCurDate('sol4')">Показать дату</button>
+                            <button onclick="hideForm('solution4')">Скрыть</button>
+                        </div>
+                    </div>
+
+                    <div class="task">
+                        <h2>№5</h2>
+                        <p>Дана ссылка, абзац и кнопка. По нажатию на кнопку запишите href ссылки в текст абзаца.</p>
+                        <div class="button">
+                            <button onclick="showForm('solution5')">Решение</button>
+                        </div>
+                    </div>
+                    
+                    <div class="solution" id="solution5">
+                        <p> <a href="#1" id="sol5href">Ссылка!</a></p>
+                        <p id="sol5par">Тут будет указана ссылка: </p>
+                        
+                        <div class="button">
+                            <button onclick="showHref('sol5href', 'sol5par')">Показать ссылку</button>
+                            <button onclick="hideForm('solution5')">Скрыть</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
