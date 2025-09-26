@@ -1,0 +1,63 @@
+body {
+    background-color: rgb(240, 240, 240);;
+}
+
+header {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding-top: 1.5%;
+    margin-bottom: 4%;
+}
+
+header h1 {
+    font-size: 250%;
+    margin-bottom: 0;
+}
+
+header p {
+    font-style: italic;
+    color: grey;
+    margin-top: 0;
+    font-size: 95%;
+}
+
+section {
+    width: 58%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(202, 202, 202);
+    background-color: rgb(247, 247, 247);
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+}
+
+section h2 a {
+    text-decoration: none;
+    color: black;
+    font-size: 150%;
+}
+
+section p {
+    text-align: justify;
+    font-size: 120%;
+}
+.redHref {
+    color: rgb(237, 136, 136);
+
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    margin-top: 4%;
+    color:white;
+    padding: 1%;
+    border-bottom-left-radius: 10px;
+}
+
+footer a {
+    color:aqua;
+}
+
