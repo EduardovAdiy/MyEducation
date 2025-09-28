@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta author="Eduardov Adiy">
+
+        <title>Level 5.5</title>
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+        <header>
+            <h1>
+                Уровень 5.5 задачника JavaScript
+            </h1>
+        </header>
+        <main>
+            <section>
+                <div class="task">
+                    <h2>
+                        №1
+                    </h2>
+                    <p>
+                        Дан инпут, кнопка и три абзаца. В инпут вводится дата в формате 2025-12-31. 
+                        По нажатию на кнопку выведите в первый абзац год, во второй абзац - месяц, 
+                        в третий день.
+                    </p>
+                    <div class="button">
+                        <button onclick="showForm('solution1')">Решение</button>
+                    </div>
+                </div>
+                <div class="solution" id="solution1">
+                    <div class="solution-elements">
+                        <form>
+                            <label for="sol1input">
+                                Введите дату: 
+                            </label>
+                            <input type="text" placeholder="ГГГГ-ММ-ДД" id="sol1input" oninput="checkDate('sol1input')">
+                        </form>
+                        <p id="sol1ForYear">Тут будет отображаться год ...</p>
+                        <p id="sol1ForMonth">Тут будет отображаться месяц ...</p>
+                        <p id="sol1ForDay">Тут будет отображаться день ...</p>
+                        <div class="button">
+                            <button onclick="getDatePart('sol1input')">Решить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="task">
+                    <h2>
+                        №2
+                    </h2>
+                    <p>
+                        Даны два инпута и кнопка. В инпуты вводятся числа. По нажатию на кнопку заполните 
+                        массив целыми числами от первого введеного числа до последнего.
+                    </p>
+                    <div class="button">
+                        <button onclick="showForm('solution2')">Решение</button>
+                    </div>
+                </div>
+                <div class="solution" id="solution2">
+                    <div class="solution-elements">
+                        <form>
+                            <label for="sol12nput1">
+                                Введите число: 
+                            </label>
+                            <input type="text" id="sol2input1" oninput="checkNum('sol2input1')">
+                            <br> <br>
+                            <label for="sol12nput2">
+                                Введите число: 
+                            </label>
+                            <input type="text" id="sol2input2" oninput="checkNum('sol2input2')">
+                        </form>
+                        <p id="sol2Arr">Тут будет массив чисел ...</p>
+                        <div class="button">
+                            <button onclick="getNumberArr('sol2input1', 'sol2input2', 'sol2Arr')">Решить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="task">
+                    <h2>
+                        №3
+                    </h2>
+                    <p>
+                       Дан инпут, абзац и кнопка. В инпут вводится строка. По нажатию на кнопку выведите 
+                       в абзац последний символ введенной строки.
+                    </p>
+                    <div class="button">
+                        <button onclick="showForm('solution3')">Решение</button>
+                    </div>
+                </div>
+                <div class="solution" id="solution3">
+                    <div class="solution-elements">
+                        <form>
+                            <label for="sol13nput1">
+                                Введите строку: 
+                            </label>
+                            <input type="text" id="sol3input1">
+                            <br> 
+                        </form>
+                        <p id="sol3Out">Тут будет отображен последний символ строки ...</p>
+                        <div class="button">
+                            <button onclick="getLastChar('sol3input1', 'sol3Out')">Решить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="task">
+                    <h2>
+                        №4
+                    </h2>
+                    <p>
+                       Дан абзац, в котором записано число 1. По нажатию на кнопку увеличивайте 
+                       число в абзаце на единицу.
+                    </p>
+                    <div class="button">
+                        <button onclick="showForm('solution4')">Решение</button>
+                    </div>
+                </div>
+                <div class="solution" id="solution4">
+                    <div class="solution-elements">
+                        <p id="sol4Out">Абзац со счетчиком: 1</p>
+                        <div class="button">
+                            <button onclick="getNextNum('sol4Out')">Решить</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="task">
+                    <h2>
+                        №5
+                    </h2>
+                    <p>
+                       Дан инпут и абзац. В инпут вводится строка со словами. 
+                       По потери фокуса выведите в абзац количество слов во введенной строке.
+                    </p>
+                    <div class="button">
+                        <button onclick="showForm('solution5')">Решение</button>
+                    </div>
+                </div>
+                <div class="solution" id="solution5">
+                    <div class="solution-elements">
+                        <form>
+                            <label for="sol5input">
+                                Введите строку: 
+                            </label>
+                            <input type="text" onchange="getWordCount('sol5input', 'sol5Out')" id="sol5input">
+                        </form>
+                        <p id="sol5Out">Кол-во слов: </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Ссылка на основное задание:
+                <a href="https://code.mu/ru/javascript/tasker/stager/5/5/">Задание 5.5</a>
+            </p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
