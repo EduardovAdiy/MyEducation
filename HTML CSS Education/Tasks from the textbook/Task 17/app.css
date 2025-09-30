@@ -1,0 +1,55 @@
+.header {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 140%;
+    
+}
+
+#base-continer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block {
+    width: 80%;
+    padding: 2%;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgb(177, 209, 235);
+    text-align: center;
+    margin-bottom: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.block h1 {
+    font-size: 120%;
+    margin-bottom: 1%;
+}
+
+.block p {
+    font-size: 90%;
+    margin-top: 0;
+}
+
+.block a {
+    text-decoration: none;
+    font-size: 90%;
+    color: rgb(36, 143, 189);
+}
+
+.block a:hover {
+    color: rgb(30, 93, 133);
+}
+
+footer {
+    text-align: center;
+    color: grey;
+}
+
+.block:hover {
+    transform: scale(1.1);
+}
+
