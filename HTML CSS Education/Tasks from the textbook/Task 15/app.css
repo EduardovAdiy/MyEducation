@@ -1,0 +1,88 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(238, 238, 238);
+}
+
+header {
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    padding: 2%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header p {
+    font-style: italic;
+    margin-top: 0.5%;
+}
+
+header h1 {
+    margin-bottom: 0;
+    font-size: 180%;
+}
+
+.main-conteiner {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blocks {
+    text-align: justify;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid rgb(189, 189, 189);
+    margin-top: 4%;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.float {
+    float: right;
+    background-color: rgb(236, 236, 236);
+    padding-left: 1%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+    border: 1px solid rgb(189, 189, 189);
+    margin-top: 5%;
+    margin-left: 2%;
+    font-size: 80%;
+}
+
+.blocks h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.href-orange {
+    text-decoration: none;
+    color: rgb(247, 142, 57)
+}
+
+.href-green {
+    text-decoration: none;
+    color: rgb(106, 158, 106)
+}
+
+.href-orange:hover {
+    text-decoration: underline;
+}
+.href-green:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(51, 51, 51);
+    padding: 1%;
+    margin-top: 2%;
+    color: white
+}
+
+footer a {
+    color: rgb(187, 174, 174);
+}
+
+footer a:hover {
+    color: rgb(243, 236, 236);
+}
