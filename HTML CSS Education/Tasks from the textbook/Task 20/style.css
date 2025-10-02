@@ -1,0 +1,85 @@
+html, body {
+    background-color: rgb(248, 244, 236);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.menu {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    background-color: #f8ebde;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    border: 1px solid rgb(167, 116, 15);
+}
+
+.menu a {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:auto;
+    margin: 0;
+    text-decoration: none;
+    color: rgb(167, 116, 15);
+    font-size: 120%;
+}
+
+.menu a:hover {
+    color: white;
+    background-color: rgb(218, 150, 13);
+}
+
+.main-conteiner {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: 1px solid rgb(167, 116, 15);
+    background-color: #fff5eb;
+    margin-top: 2%;
+}
+
+.grid {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.grid-column {
+    text-align: left;
+    display: block;
+    width: 100%;
+    padding-left: 2%;
+ 
+}
+
+.grid-column a {
+    display: block;
+    width: 100%;
+}
+
+.grid-column h1 {
+    font-size: 120%;
+}
+
+.grid-column a {
+    text-decoration: none;
+    color: rgb(167, 116, 15);
+}
+
+.grid-column a:hover {
+    color: rgb(88, 62, 9);
+    text-decoration: underline;
+}
