@@ -84,6 +84,7 @@ header p {
     padding: 2%;
     background-color: white;
     margin-top: 2%;
+    display: block;
 }
 
 .block:hover {
@@ -107,6 +108,7 @@ header p {
 .button {
     text-align: center;
     float: bottom;
+    padding-bottom: 6%;
     bottom: 0;
 }
 
