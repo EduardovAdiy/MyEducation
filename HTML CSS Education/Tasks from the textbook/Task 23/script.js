@@ -29,14 +29,50 @@ function generateMainSection() {
     for (let i in dataSet) {
         let section = document.createElement('section');
 
-        let 
+        let div = document.createElement('div');
+        div.className = "float";
+
+        let a = document.createElement('a');
+        a.href = "#";
+        a.innerHTML = "♥";
+        div.appendChild(a);
+
+        section.appendChild(div);
 
         let h1 = document.createElement('h1');
         h1.innerHTML = dataSet[i]["title"];
         section.appendChild(h1);
 
-        let p
+        let p = document.createElement('p');
+        p.innerHTML = dataSet[i]["text"];
+        section.appendChild(p);
+
+        let sectionInfo = document.createElement('div');
+        sectionInfo.className = "section-info";
+
+        let spanDate = document.createElement("span");
+        spanDate.innerHTML = dataSet[i]["date"];
+        sectionInfo.appendChild(spanDate);
+
+        let author = document.createElement('a');
+        author.href = '#';
+        author.innerHTML = dataSet[i]["author"];
+        sectionInfo.appendChild(author);
+
+        let topic = document.createElement('a');
+        topic.href = "#";
+        topic.innerHTML = dataSet[i]["topic"];
+        sectionInfo.appendChild(topic);
+
+        let comment = document.createElement('a');
+        comment.href = "#";
+        comment.innerHTML = dataSet[i]["comment"];
+        sectionInfo.appendChild(comment);        
+
+        section.appendChild(sectionInfo); 
 
         main.appendChild(section);
     };
 };
+
+generateMainSection();

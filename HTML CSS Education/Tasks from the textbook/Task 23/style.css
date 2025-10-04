@@ -1,0 +1,58 @@
+body {
+    background-color: rgb(244, 244, 244);
+}
+
+header {
+    text-align: center;
+}
+
+.header {
+    position: relative;
+    padding-top: 4%;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.logo {
+    position: absolute;
+    margin: 0;
+    background-color: rgb(255, 242, 226);
+    border: 1px solid rgb(255, 198, 129);
+    border-radius: 4px;
+    padding: 0.5% 1% 1%;
+    transform: rotate(-3deg);
+    transform-origin: left bottom;
+    left: 3%;
+    top: 15%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80%;
+    box-shadow: 2px 2px 2px 2px grey;
+    transition: transform;
+}
+
+.logo:hover {
+    transform: rotate(0deg);
+    transition-duration: 0.5s;
+    transform: scale(1.03);
+    box-shadow: 2px 2px 5px 2px grey;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 240%;
+
+}
+
+.logo p {
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    padding: 0.5% 0 0.5%;
+    background-color: rgb(255, 242, 226);
+    border: 1px solid rgb(255, 198, 129);
+}
