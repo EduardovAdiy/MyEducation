@@ -1,14 +1,23 @@
 body {
     background-color: rgb(244, 244, 244);
+    padding: 0 2% 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
     text-align: center;
+    margin-bottom: 2%;
 }
 
 .header {
     position: relative;
     padding-top: 4%;
+}
+
+.header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 240%;
+    margin-bottom: 1.5%;
 }
 
 .clearfix {
@@ -25,8 +34,8 @@ header {
     transform: rotate(-3deg);
     transform-origin: left bottom;
     left: 3%;
-    top: 15%;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    top: 20%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 80%;
     box-shadow: 2px 2px 2px 2px grey;
     transition: transform;
@@ -43,7 +52,6 @@ header {
     margin: 0;
     padding: 0;
     font-size: 240%;
-
 }
 
 .logo p {
@@ -52,7 +60,176 @@ header {
 }
 
 .menu {
-    padding: 0.5% 0 0.5%;
+    padding: 1.5%;
     background-color: rgb(255, 242, 226);
     border: 1px solid rgb(255, 198, 129);
+    border-radius: 4px;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 1% 2%;
+    color:black
+}
+
+.menu a #checked {
+    background-color: rgb(113, 188, 243);
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: rgb(221, 182, 134);
+    border-radius: 4px;
+}
+
+.main-info {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 2%;
+}
+
+.float {
+    float: right;
+}
+
+.info {
+    width: 35%;
+    box-sizing: border-box;
+    margin-right: 3%;
+}
+
+.left-menu {
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 4px;
+    background-color: white;
+    padding: 0 5% 5%;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+
+.left-menu a {
+    text-decoration: none;
+    color: rgb(7, 112, 173);
+    font-size: 80%;
+    margin-top: 5%;
+    padding: 4%;
+}
+
+.left-menu a:hover {
+    background-color: rgb(206, 237, 255);
+    border-radius: 5px;
+}
+
+.about-site {
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 4px;
+    background-color: white;
+    padding: 0 5%;
+}
+
+.about-site h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 110%;
+}
+
+.about-site p {
+    color: grey;
+    font-size: 90%;
+}
+
+.main {
+    box-sizing: border-box;
+}
+
+section {
+    box-sizing: border-box;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 4px;
+    background-color: white;
+    padding: 2%;
+    margin: 0 0 2%;
+}
+
+section h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 160%;
+    padding: 0;
+    margin: 0;
+}
+
+section p {
+    color: grey;
+    text-align: justify;
+}
+
+section a {
+    color: rgb(7, 112, 173);
+    text-decoration: none;
+    font-size: 130%;
+}
+
+.float a {
+    transition: transform;
+}
+
+.float a:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.03);
+}
+
+.section-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
+}
+
+.section-info span {
+    color: grey;
+    font-size: 80%;
+}
+
+.section-info a {
+    font-size: 80%;
+}
+
+.section-info a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+}
+
+.footer-menu {
+    margin: 0 auto;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: grey;
+    padding: 0.5% 1%;
+    font-size: 70%;
+    border: 1px solid rgb(0, 157, 255);
+    background-color: rgb(207, 237, 255);
+    border-radius: 4px;
+}
+
+.footer-menu a:hover {
+    background-color: rgb(0, 157, 255);
+    color: black;
+} 
+
+footer {
+    color: grey;
+    font-size: 80%;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(63, 63, 134);
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
