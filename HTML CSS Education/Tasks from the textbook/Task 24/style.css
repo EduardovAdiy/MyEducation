@@ -231,6 +231,7 @@ footer a:hover {
 footer p {
     color: grey;
     font-size: 90%;
+    text-align: center;
 }
 
 footer p a {
@@ -244,7 +245,7 @@ footer p a {
  margin-bottom: 5%;
 }
 
-#main h1, p{
+section h1, p{
     text-align: justify;
 }
 
