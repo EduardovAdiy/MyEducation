@@ -291,8 +291,23 @@ section {
 }
 
 section:hover {
-    box-shadow: 0 10px 10px 1px rgb(231, 231, 231);
+    box-shadow: 0 5px 10px 1px rgb(231, 231, 231);
     transform: translate(0, -3px);
     transition: box-shadow transform;
     transition-duration: 0.2s;
+}
+
+#events {
+    list-style-type: none;
+    padding: 0;
+}
+
+#events li:nth-child(2) {
+    border-top: 1px solid #e8d5c4;
+    border-bottom: 1px solid #e8d5c4;;
+}
+
+#events li {
+    padding: 4% 0;
+    color: rgb(60, 60, 107);
 }

@@ -155,6 +155,23 @@ function getMainData (mainData) {
     }
 }
 
+function getEvents (events) {
+    let sortEvents = events.sort((a,b) => {new Date(b["date"]) - new Date(a["date"])});
+    let months = ['January', 'February', 'March', 'April', 'May', 'June ', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    let ul = document.getElementById("events");
+
+    for (let i = 0; i < 3; i++){
+        let date = `${months[(new Date(sortEvents[i]["date"]).getMonth()) - 1]} ${new Date(sortEvents[i]["date"]).getDate()}`;
+
+        let li = document.createElement("li");
+        li.innerHTML = `${sortEvents[i]["title"]} - ${date}`;
+
+        ul.appendChild(li);
+    }
+};
+
 getRandomFact();
 getPopularTags (tags);
 getMainData (mainData);
+getEvents(upcommingEvents);
