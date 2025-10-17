@@ -1,0 +1,32 @@
+body, html {
+    height: 100%;
+}
+.block {
+    border: 1px solid red;
+    width: 20%;
+    height: 30%;
+    animation: bounce;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes bounce {
+    11% {
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    33% {
+        margin-top: 40%;
+        margin-left: 40%;
+    }
+    66% {
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    100% {
+        margin-top: 0%;
+        margin-left: 0%;
+    }
+    
+}
