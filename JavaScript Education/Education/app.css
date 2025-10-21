@@ -1,32 +1,79 @@
-body, html {
-    height: 100%;
-}
-.block {
-    border: 1px solid red;
-    width: 20%;
-    height: 30%;
-    animation: bounce;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    
+* {
+    padding: 0;
+    margin: 0;
 }
 
-@keyframes bounce {
-    11% {
-        margin-top: 10%;
-        margin-left: 10%;
-    }
-    33% {
-        margin-top: 40%;
-        margin-left: 40%;
-    }
-    66% {
-        margin-top: 10%;
-        margin-left: 10%;
-    }
-    100% {
-        margin-top: 0%;
-        margin-left: 0%;
-    }
-    
+html, body {
+    height: 100%;
+    width: 100%;
 }
+
+.header {
+    text-align: center;
+}
+
+.header a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.task-list {
+    background-color: rgb(218, 218, 218);
+    width: 80%;
+    margin: 2% auto;
+    min-height: 6%;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 4px;
+    text-align: center;
+    align-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.task-list a {
+    text-decoration: none;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 4px;
+    background-color: rgb(197, 223, 228);
+    color: rgb(8, 8, 8);
+    padding: 0.5% 2%;
+    margin: 0.5%;
+}
+
+.task-list a:hover {
+    box-shadow: 0 3px 5px 2px grey;
+}
+
+.task-list a:active {
+    box-shadow: 0 2px 5px 4px grey;
+    transform: scale(0.8);
+}
+
+
+.task {
+    border: 2px dotted rgb(161, 161, 161);
+    width: 60%;
+    margin: 0 auto;
+    min-height: 20%;
+    padding: 1%;
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+.task h2 {
+    text-align: center;
+}
+
+.solution {
+    width: 50%;
+    margin: 0 auto;
+    min-height: 20%;
+    background-color: rgb(202, 202, 202);
+    box-sizing: content-box;
+}
+
+#solution-block {
+    padding: 2%;
+}
+
