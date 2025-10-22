@@ -217,3 +217,354 @@ function createSolTwo () {
 		p.innerHTML = p.innerHTML + String(sum);
 	});
 };
+
+function createSolThree () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите число: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "number";
+		input.placeholder = "Enter number ...";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener('mouseout', function() {
+		let arr = this.value.split('').map((elem) => Number(elem));
+		
+		let sum = arr.reduce((result = 0, elem) => result + elem);
+
+		alert('Сумма цифр равна: '+ String(sum));
+	});
+}
+
+function createSolFour () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите числа через запятую: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.placeholder = "Enter numbers ...";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener('mouseout', function() {
+		let arr = this.value.split(',').filter((elem) => !isNaN(Number(elem)) && !(elem == '')).map((elem) => Number(elem));
+		input.value = arr.join(', ');
+		
+		let sum = arr.reduce((result = 0, elem) => result + elem);
+
+		alert(`Среднее арифметическое (${sum}/${arr.length}): ${(sum/arr.length).toFixed(2)}`);
+	});
+}
+
+function createSolFive () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите ФИО: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.placeholder = "Фамилия Имя Отчетсво";
+		input.style = "width: 60%";
+		div.appendChild(input);
+
+		let br = document.createElement('br');
+		div.appendChild(br);
+		let br2 = document.createElement('br');
+		div.appendChild(br2);
+
+		let labelNom = document.createElement('label');
+		labelNom.innerHTML = "Фамилия: ";
+		div.appendChild(labelNom);
+
+		let nom = document.createElement("input");
+		nom.type = "text";
+		div.appendChild(nom);
+
+		let br3 = document.createElement('br');
+		div.appendChild(br3);
+
+		let labelPrenom = document.createElement('label');
+		labelPrenom.innerHTML = "Имя: ";
+		div.appendChild(labelPrenom);
+
+		let prenom = document.createElement("input");
+		prenom.type = "text";
+		div.appendChild(prenom);
+
+		let br4 = document.createElement('br');
+		div.appendChild(br4);
+
+		let labelPatron = document.createElement('label');
+		labelPatron.innerHTML = "Отчество: ";
+		div.appendChild(labelPatron);
+
+		let patronyme = document.createElement("input");
+		patronyme.type = "text";
+		div.appendChild(patronyme);
+
+	sol.appendChild(div);
+
+	input.addEventListener('mouseout', function() {
+		let arr = this.value.split(' ');
+		
+		nom.value = arr[0];
+		prenom.value = arr[1];
+		patronyme.value = arr[2];
+	});
+}
+
+function createSolSix () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите ФИО: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.style = "width: 50%";
+		input.placeholder = "Фамилия Имя Отчетсво";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener("mouseout", function () {
+		this.value = this.value.toUpperCase();
+	});
+}
+
+function createSolSeven () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите текст: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.style = "width: 80%";
+		input.placeholder = "Введите текст ...";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener("mouseout", function () {
+		let arr = this.value.split(' ').filter((elem) => !(elem.length == ''));
+
+		alert('Кол-во слов в тексте: ' + String(arr.length));
+	});
+}
+
+function createSolEight () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите дату: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.placeholder = "ДД.ММ.ГГГГ";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener("mouseout", function () {
+		if((isNaN(new Date(this.value)))) {
+			let arr = this.value.split('.').map((elem) => Number(elem));
+
+				if(!(isNaN(new Date(arr[2], arr[1], arr[0]))) && !(this.value == '')) {
+					this.value = `${arr[2]}-${addZero(arr[1])}-${addZero(arr[0])}`;
+				} else {
+					alert('Введенные данные не соответствуют формату!');
+					this.value = '';
+				}
+			};
+
+		function addZero(num) {
+			if (num < 10) {
+				return '0'+String(num);
+			} else {
+				return num;
+			}
+		};
+
+		});
+}
+
+function createSolNine () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите слово: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		div.appendChild(input);
+
+		let block = document.createElement('div');
+		block.style = "text-align: center; padding-top: 5%;"
+		div.appendChild(block);
+		
+			let button = document.createElement('button');
+			button.innerHTML = "Проверить"
+			block.appendChild(button);
+
+	sol.appendChild(div);
+
+	button.addEventListener("click", function() {
+		if(input.value == '') {
+			alert('Вы не ввели данных!');
+		} else {
+			let word = input.value;
+			let reverseWord = input.value.split('').reverse().join('');
+
+			if(word == reverseWord) {
+				alert(`Слово читается одинаково со всех сторон (${word} / ${reverseWord})!` );
+			} else {
+				alert (`Слово читается НЕ одинаково со всех сторон (${word} / ${reverseWord})!`);
+			}
+		}
+	});
+}
+
+function createSolTen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите число: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "number";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener('mouseout', function() {
+		let isExist = this.value.toString().includes('3')
+
+		if(isExist) {
+			alert ('Данное число содержит цифру 3!');
+		} else {
+			alert ('Данное число НЕ содержит цифру 3!');
+		}
+	});
+}
+
+function createSolEleven () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	sol.appendChild(div);
+
+	let num = 0;
+
+	while (num < 3) {
+		num = Math.floor(Math.random() * 10);
+	}
+
+	for (let i = 0; i < num; i++) {
+		let p = document.createElement('p');
+		p.innerHTML = 'Сгенерированный абзац ';
+		p.style = "text-align: center;";
+		div.appendChild(p);
+	};
+
+	let block = document.createElement('div');
+	block.style = 'text-align: center; padding-top: 4%;'
+	div.appendChild(block);
+
+	let button = document.createElement('button');
+	button.innerHTML = 'Указать номер'
+	block.appendChild(button);
+
+	button.addEventListener('click', function () {
+		let p = div.getElementsByTagName('p');
+		let num = 1;
+
+		for (let elem of p) {
+			elem.innerHTML = `${elem.innerHTML} №${num}`;
+			num += 1;
+		}
+	});
+}
+
+function createSolTwelve () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let num = 0;
+
+	while (num < 3) {
+		num = Math.floor(Math.random() * 6);
+	}
+
+	for (let i = 1; i <= num; i++) {
+		let a = document.createElement('a');
+		a.href = `#${i}`;
+		a.innerHTML = 'Сгенерированная ссылка '+ String(i);
+		div.appendChild(a);
+
+		let br = document.createElement('br');
+		div.appendChild(br);
+	}
+	
+	let block = document.createElement('div');
+	block.style = 'text-align: center; padding-top: 4%;'
+	div.appendChild(block);
+
+	let button = document.createElement('button');
+	button.innerHTML = 'Показать путь'
+	block.appendChild(button);
+
+	button.addEventListener("click", function() {
+		let a = div.getElementsByTagName('a');
+
+		for (let elem of a) {
+			elem.innerHTML = `${elem.innerHTML} (${elem.href})`;
+		}
+	});
+
+}
