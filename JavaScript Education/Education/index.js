@@ -118,7 +118,7 @@ function createSolution (title) {
 			createSolTwentyOne ();
 			break;
 		case '№22':
-			createSolYwentyTwo ();
+			createSolTwentyTwo ();
 			break;
 		case '№23':
 			createSolTwentyTree ();
@@ -142,6 +142,7 @@ function createSolOne () {
 
 	let  div = document.createElement('div');
 	div.id = "solution-block";
+	div.style = "text-align: center;";
 
 		let label = document.createElement("label");
 		label.innerHTML = "Введите текст: ";
@@ -157,6 +158,7 @@ function createSolOne () {
 
 		let p = document.createElement ("p");
 		p.innerHTML = "Тут будет текст из инпута: ";
+		p.style = "margin-top: 3%;";
 		div.appendChild(p);
 
 	sol.appendChild(div);
@@ -567,4 +569,389 @@ function createSolTwelve () {
 		}
 	});
 
+}
+
+function createSolThirdteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let num = 0;
+
+	while (num < 3) {
+		num = Math.floor(Math.random() * 6);
+	}
+
+	for (let i = 1; i <= num; i++) {
+		let a = document.createElement('a');
+		a.href = `#${i}`;
+		a.innerHTML = 'Сгенерированная ссылка '+ String(i);
+		div.appendChild(a);
+
+		let br = document.createElement('br');
+		div.appendChild(br);
+	}
+	
+	let block = document.createElement('div');
+	block.style = 'text-align: center; padding-top: 4%;'
+	div.appendChild(block);
+
+	let button = document.createElement('button');
+	button.innerHTML = 'Проверить'
+	block.appendChild(button);
+}
+
+function createSolFourteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let num = 0;
+
+	while (num < 3) {
+		num = Math.floor(Math.random() * 6);
+	}
+
+	for (let i = 1; i <= num; i++) {
+		let p = document.createElement('p');
+		p.innerHTML = 'Сгенерированный абзац '+ String(Math.floor(Math.random() * 100));
+		div.appendChild(p);
+
+		let br = document.createElement('br');
+		div.appendChild(br);
+
+		p.addEventListener("click", function () {
+			let num = this.innerHTML.split('').filter (elem => !(isNaN(Number(elem)))).join('');
+			let text = this.innerHTML.split('').filter (elem => (isNaN(Number(elem)))).join('');
+
+			this.innerHTML = `${text} ${Math.pow(Number(num), 2)}`;
+		})
+	};
+}
+
+function createSolFiveteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+
+		let label = document.createElement('label');
+		label.innerHTML = "Введите дату: ";
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.placeholder = "ДД.ММ.ГГГГ";
+		div.appendChild(input);
+
+	sol.appendChild(div);
+
+	input.addEventListener("mouseout", function () {
+		let arr = this.value.split('.').map((elem) => Number(elem));
+
+		if(!(isNaN(new Date(arr[2], arr[1], arr[0]))) && !(this.value == '')) {
+			let date = new Date(arr[2], (arr[1] - 1), arr[0]);
+			let dayOfWeek = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'];
+
+			alert(`Этот день (${this.value}) - ${dayOfWeek[date.getDay()]}`);
+			console.log(date.getDay())
+
+		} else if (!(this.value == '')) {
+			alert('Введенные данные не соответствуют формату!');
+			this.value = '';
+		}
+
+		});
+}
+
+function createSolSixteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+
+		let button1 = document.createElement("button");
+		button1.innerHTML = "-1";
+		button1.style = "padding: 2%;";
+		div.appendChild(button1);
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.value = "0";
+		input.style = "margin: 0 4%; text-align: center;";
+		input.setAttribute("disabled", true);
+		div.appendChild(input);
+
+		let button2 = document.createElement("button");
+		button2.innerHTML = "+1";
+		button2.style = "padding: 2%;";
+		div.appendChild(button2);
+
+	sol.appendChild(div);	
+
+	button1.addEventListener("click", function () {
+		if(Number(input.value) > 0) {
+			input.value = (Number(input.value) - 1);
+		}
+	});
+
+	button2.addEventListener("click", function () {
+		input.value = (Number(input.value) + 1);
+	});
+	
+}
+
+function createSolSeventeen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+
+		let input = document.createElement("input");
+		input.type = "text";
+		input.value = "0";
+		input.style = "text-align: center;";
+		input.setAttribute("disabled", true);
+		div.appendChild(input);
+
+		for (let i = 0; i < 3; i++) {
+			let p = document.createElement("p");
+			p.innerHTML = "Нажми на меня!";
+			p.style = "padding: 1% 0;"
+			div.appendChild(p);
+
+			p.addEventListener("click", function() {
+				input.value = (Number(input.value) + 1);
+			});
+		};
+
+	sol.appendChild(div);		
+}
+
+function createSolEigthteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	for (let i = 0; i < 4; i++) {
+		let block = document.createElement("div");
+		block.className = "inputDiv";
+		block.innerHTML = "Тут сгенерирвоан текст для дальнейшей обрезки!";
+		div.appendChild(block);	
+	}	
+
+
+	let button = document.createElement("button");
+	button.innerHTML = "Обрезать"
+	button.style = "margin-top: 4%;";
+	div.appendChild(button);
+
+	button.addEventListener("click", function() {
+		let divs = document.getElementsByClassName ("inputDiv");
+
+		for (let elem of divs) {
+			elem.innerHTML = elem.innerHTML.substring(0, 10) +':';
+		}
+	})
+}
+
+function createSolNineteen () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let input = document.createElement("input");
+	input.type = "text";
+	input.style = "width: 60%;";
+	div.appendChild(input);
+
+	let button = document.createElement("button");
+	button.innerHTML = "Сгенерировать текст";
+	button.style = "margin-top: 5%; margin-left: 3%; padding: 0 2%;";
+	div.appendChild(button);
+
+	button.addEventListener("click", function() {
+		let words = 'АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщъыьЭэЮюЯя';
+		input.value = '';
+		
+		for (let i = 0; i < 8; i++) {
+			input.value = input.value + words[Math.floor(Math.random() * words.length)];
+		}
+	});
+}
+
+function createSolTwenty () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let input = document.createElement("input");
+	input.type = "text";
+	input.placeholder = 'Введите строку ...';
+	input.style = "width: 60%;";
+	div.appendChild(input);
+
+	let button = document.createElement("button");
+	button.innerHTML = "Перемешать текст";
+	button.style = "margin-top: 5%; margin-left: 3%; padding: 0 2%;";
+	div.appendChild(button);
+
+	button.addEventListener("click", function() {
+		let wordsArr = input.value.split('');
+		input.value = '';
+
+		while (wordsArr.length > 0) {
+			let pos = Math.floor(Math.random() * wordsArr.length);
+			input.value = input.value + wordsArr.splice(pos, 1);
+		}
+	});
+}
+
+function createSolTwentyOne () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let input = document.createElement("input");
+	input.type = "number";
+	input.placeholder = 'Введите температуру ...';
+	div.appendChild(input);
+
+	let button = document.createElement("button");
+	button.innerHTML = "Рассчитать температуру";
+	button.style = "margin-top: 5%; margin-left: 3%; padding: 0 2%;";
+	div.appendChild(button);
+
+	let p = document.createElement("p");
+	p.innerHTML = "Температура в градусах Цельсия: ";
+	p.style = "margin-top: 5%;";
+	div.appendChild(p);
+
+	button.addEventListener("click", function() {
+		
+		p.innerHTML = "Температура в градусах Цельсия: " + ((Number(input.value) - 32) * 5/9).toFixed(2);
+	});
+}
+
+function createSolTwentyTwo () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let input = document.createElement("input");
+	input.type = "number";
+	input.placeholder = 'Введите число...';
+	div.appendChild(input);
+
+	let button = document.createElement("button");
+	button.innerHTML = "Рассчитать факториал";
+	button.style = "margin-top: 5%; margin-left: 3%; padding: 0 2%;";
+	div.appendChild(button);
+
+	let p = document.createElement("p");
+	p.innerHTML = "Факториал: ";
+	p.style = "margin-top: 5%;";
+	div.appendChild(p);
+
+	button.addEventListener("click", function() {
+		let pi = 3.14159;
+		let e = 2.7182;
+
+		p.innerHTML = "Факториал ("+ input.value +"): "+ Math.ceil((Math.sqrt(2 * input.value * pi) * Math.pow((input.value / e), input.value)));
+	});
+}
+
+function createSolTwentyTree () {
+	createSolutionBlock ();
+
+	let  div = document.createElement('div');
+	div.id = "solution-block";
+	div.style = "text-align: center;"
+	sol.appendChild(div);
+
+	let p = document.createElement('p');
+	p.innerHTML = "Введите коэффициенты квадратного уравнения (ax^2 + bx + c = 0)";
+	div.appendChild(p);
+
+	let coef = ['a', 'b', 'c'];
+
+	for (let elem of coef) {
+		let label = document.createElement("label");
+		label.innerHTML = elem +': ';
+		label.for = elem;
+		div.appendChild(label);
+
+		let input = document.createElement("input");
+		input.type = "number";
+		input.id = elem;
+		input.style = "margin: 1% 0;";
+		div.appendChild(input);
+
+		let br = document.createElement("br");
+		div.appendChild(br);
+	}
+
+	let button = document.createElement("button");
+	button.innerHTML = "Рассчитать";
+	button.style = "padding: 0 2%; margin: 3% 0;";
+	div.appendChild(button);
+
+	let result = document.createElement("p");
+	result.innerHTML = "Корни квадратного уравнения: ";
+	div.appendChild(result);
+
+	button.addEventListener("click", function () {
+		let a = document.getElementById('a').value;
+		let b = document.getElementById('b').value;
+		let c = document.getElementById('c').value;
+
+		let checkInput = function (num) {
+			return (!(Number(num) == 0)) 					
+		};
+
+		if(checkInput(a) && checkInput(b) && checkInput (c)) {
+			let D = Math.pow(b, 2) - 4*a*c;
+			console.log(D);
+
+			if(D < 0) {
+				result.innerHTML = "Корни квадратного уравнения: корней нет!"; 
+			} else if(D == 0) {
+				let x = -b/(2*a);
+
+				result.innerHTML = "У уравнения один корень: x = " + x + ";"; 
+			} else {
+				let x1 = (-b + Math.sqrt(D)) / (2*a);
+				let x2 = (-b - Math.sqrt(D)) / (2*a);
+
+				result.innerHTML = "У уравнения два корня: x1 = " + x1 + ", x2 = " + x2 + ";"; 
+			}
+			
+		} else {
+			result.innerHTML = "Корни квадратного уравнения: укажите все коэффициенты!"; 
+		}
+
+	})
 }
