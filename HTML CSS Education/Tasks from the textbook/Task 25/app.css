@@ -81,17 +81,21 @@ a {
 .account-block {
     display: flex;
     width: 20%;
-    gap: 10%;
+    gap: 8%;
 }
 
 .account-block a {
     font-size: 90%;
     padding: 5%;
+    max-height: 20%;
+    transition-duration: 0.3s;
 }
 
 .account-block a:hover {
     border-radius: 4px;
     background-color: rgb(166, 229, 166);
+    transform: background-color;
+    transition-duration: 0.1s;
 }
 
 .header-nav {
@@ -110,11 +114,14 @@ a {
 .nav-menu a {
     padding: 1%;
     margin: 0 1%;
+    transition-duration: 0.4s;
 }
 
 .nav-menu a:hover {
     border-radius: 4px;
     background-color: rgb(166, 229, 166);
+    transform: background-color;
+    transition-duration: 0.1s;
 }
 
 .nav-deals {
@@ -176,7 +183,7 @@ a {
 }
 
 .block a:hover {
-    background-color: rgb(207, 230, 207);
+    background-color: rgb(217, 238, 217);
     padding-left: 6%;
     transform: padding-left;
     transition-duration: 0.5s;
