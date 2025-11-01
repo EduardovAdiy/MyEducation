@@ -47,11 +47,58 @@ function getCatFact (data) {
 function createDocElement(data) {
     let body = document.getElementById("base-section");
 
-    let p = document.createElement("p");
-    p.innerHTML = data;
+ 
+    let obj = new Object(JSON.parse(data));
+    
+    for (let device of obj) {
+        let data = device["data"];
 
-    body.appendChild(p);
+        if (data !== null) {
+            let div = document.createElement("div");
+            div.className = "base-block";
+
+            let br = function() {
+                let br = document.createElement("br");
+                div.appendChild(br);
+            };
+
+            let h3 = document.createElement("h3");
+            h3.innerHTML = device["name"];
+            div.appendChild(h3);
+
+            br();
+
+            let p = document.createElement("p");
+            let keys = Object.keys(data);
+            let values = Object.values(data);
+            let result = '';
+
+            for (let i in keys) {
+                result = `${result}${keys[i]}: ${values[i]}. `;
+            };
+            p.innerHTML = result;
+            div.appendChild(p);
+
+            br();
+
+            let price = document.createElement("p");
+            price.innerHTML = "$" + (data["price"] ?? `${(Math.floor(Math.random() * 500))}.99`)
+            price.className = "cost";
+            div.appendChild(price);
+
+            br();
+
+            let button = document.createElement("button");
+            button.innerHTML = "Add to Cart";
+            div.appendChild(button);
+
+        body.appendChild(div);
+        }  
+    }
+    let seperator = document.createElement("div");
+    seperator.className = "separator";
+    body.appendChild(seperator);
 }
 
 getAllObjects();
-getRandomFact() ;
+getRandomFact();

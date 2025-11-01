@@ -32,6 +32,7 @@ a {
 
 .header-footer-font {
     background-color: rgb(230, 243, 230);
+    border-top: 1px solid rgb(133, 187, 133); 
 }
 
 .main-header {
@@ -40,7 +41,7 @@ a {
     width: 100%;
     text-align: center;
     box-sizing: border-box;
-    border-bottom: 1px solid rgb(133, 187, 133);;  
+    border-bottom: 1px solid rgb(133, 187, 133);  
 }
 
 .flex {
@@ -149,13 +150,17 @@ a {
     background-color: rgb(166, 229, 166);
 }
 
-
+#main {
+    padding-bottom: 1%;
+    box-sizing: content-box;
+}
 .main {
-    padding: 1.5%;
+    padding: 2% 4%;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    gap: 4%;
+    gap: 3%;
     background-color: rgb(250, 255, 250);
+    box-sizing: content-box;
 }
 
 .left-sidebar div {
@@ -224,4 +229,94 @@ a {
 
 button:hover {
     background-color: green;
+}
+
+#base-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+    padding-bottom: 2%;
+}
+
+.base-block {
+    border:1px solid rgb(183, 219, 183); 
+    border-radius: 8px;
+    background-color: white;
+    padding: 4%;
+    box-shadow: 0 0 3px 1px rgb(238, 238, 238);
+    transition-duration: 0.3s;
+}
+
+.base-block:hover {
+    translate: 0 -5px ;
+    transition-duration: 0.3s;
+    box-shadow: 0 3px 10px 2px rgb(202, 202, 202);
+}
+
+.base-block p {
+    font-size: 80%;
+    margin-top: 3%;
+    color:rgb(70, 70, 70);
+}
+
+.base-block h3 {
+   font-family: Arial, Helvetica, sans-serif; 
+   font-size: 130%;
+}
+
+.base-block .cost {
+    color: green;
+    font-weight: bold;
+    font-size: 140%;
+}
+
+.base-block button {
+    display: block;
+    width: 100%;
+    padding: 3%;
+    font-size: 110%;
+}
+
+.base-block p {
+    font-size: 100%;
+}
+
+.footer-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3%;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    margin: 10%;
+}
+
+.footer-block h4 {
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 120%;
+    margin-bottom: 5%;
+}
+
+.footer-block a {
+    margin: 3% 0;
+}
+
+.footer-block a:hover {
+    text-decoration: underline;
+    color: rgb(153, 185, 153);
+}
+
+.separator {
+    min-height: 120px;
+}
+
+.footer-info {
+    text-align: center;
+    padding-bottom: 1%;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
 }
