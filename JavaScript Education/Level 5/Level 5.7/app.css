@@ -20,8 +20,6 @@ html, body {
 
 .footer {
     display: block;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     padding: 1%;
     border-top-width: 2px;
@@ -112,4 +110,8 @@ button:active {
 
 #close {
     float: right;
+}
+
+#solution-data {
+    padding: 10%;
 }
