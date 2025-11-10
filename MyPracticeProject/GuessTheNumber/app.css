@@ -1,0 +1,107 @@
+body, html {
+    background-color: rgb(250, 241, 229);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.base-conteiner {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    margin: 2% auto;
+    border-radius: 5px;
+    animation-name: shadow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 15px 5px rgb(172, 146, 114);
+    }
+
+    100% {
+        box-shadow: none;
+    } 
+}
+
+.header {
+    text-align: center;
+    padding: 4%;
+    font-size: 160%;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    line-break: 2px;
+}
+
+.description {
+    text-align: justify;
+    width: 50%;
+    margin: 0 auto 1%;
+}
+
+.input-data {
+    text-align: center;
+}
+
+.input-data input {
+    text-align: center;
+}
+
+.input-data button {
+    margin: 2% 1% 1%; 
+    padding: 4px 8px;
+}
+
+.results {
+    width: 40%;
+    height: 35%;
+    margin: 3% auto 0;
+    text-align: center;
+    overflow: auto;
+}
+
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(129, 128, 128, 0.6);    
+    padding: 2%;
+    box-sizing: border-box;
+    display: none;
+}
+
+.congratulation {
+    margin: 10% auto 0;
+    padding: 4%;
+    text-align: center;
+    font-size: 200%;
+    color: green;
+    font-weight: bolder;
+    box-shadow: 0 0 15px 5px white;
+    background-color: rgb(237, 235, 235);
+    width: 30%;
+    height: 20%;
+}
+
+#repeat {
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(83, 158, 204);
+    color: white;
+    padding: 6px 10px;
+    margin-top: 30px;
+}
+
+#repeat:hover {
+    background-color: rgb(60, 120, 156);
+}
+
+#repeat:active {
+    translate: 0 1px;
+}

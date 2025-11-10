@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="rus">
+    <head>
+        <meta charset="UTF-8">
+        <title>Угадай число</title>
+
+        <link rel="stylesheet" type="text/css" href="app.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/main-header.css">
+    </head>
+    <body>
+        <div class="main-header">
+            <a href="../index.html">На главную</a>
+        </div>
+        <div class="shadow">
+            <div class="congratulation">
+                УРА! Ты справился!
+                <button id="repeat">Повторить</button>
+            </div>
+        </div>
+        <div class="base-conteiner">
+            <div class="header">
+                Угадай число
+            </div>
+            <div class="description">
+                Я загадал число от 0 до 1000. Тебе необходимо отгадать это число. 
+                Для этого введи число в поле и нажми кнопку "Мне повезет" или клавишу "Enter".
+            </div>
+            <div class="input-data">
+                <input type="text" id="input">
+                <br>
+                <button id="lucky">Мне повезет</button>
+            </div>
+
+            <div class="results" id="results">
+
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

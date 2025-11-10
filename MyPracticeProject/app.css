@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(206, 206, 206);
+}
+
+.main-conteiner {
+    width: 1000px;
+    background-color: white;
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 4px;
+}
+
+a {
+    padding: 10px 10px;
+    background-color: rgb(189, 189, 189);
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    margin: 4px;
+}
+
+a:hover {
+    background-color: grey;
+    color: white;
+}
+

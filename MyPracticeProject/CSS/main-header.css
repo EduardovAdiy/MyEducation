@@ -1,0 +1,25 @@
+.main-header {
+    background-color: rgb(174, 224, 255);
+    margin: 1px;
+    padding: 4px 10px;
+    box-sizing: content-box;
+}
+
+.main-header a {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(83, 158, 204);
+    margin: 3px;
+    border-radius: 4px;
+    color: white;
+}
+
+.main-header a:hover {
+    background-color: rgb(60, 120, 156);
+}
+
+.main-header a:active {
+    translate: 0 1px;
+}
