@@ -1,24 +1,28 @@
 body {
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(228, 228, 228);
 }
 
 .main-conteiner {
     width: 1000px;
     background-color: white;
     margin: 2% auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     border-radius: 4px;
+    padding: 2%;
 }
 
 a {
-    padding: 10px 10px;
     background-color: rgb(189, 189, 189);
     border-radius: 5px;
     color: black;
     text-decoration: none;
-    margin: 4px;
+    text-align: center;
+    display: block;
+    align-content: center;
+    height: 100px;
+    font-size: 20px;
 }
 
 a:hover {
