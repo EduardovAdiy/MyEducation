@@ -57,4 +57,30 @@ th {
     width: 40px;
     height: 40px;
     border: 1px solid grey;
+    background-color: rgb(131, 188, 223);
+    font-size: 120%;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid grey;
+    text-align: center;
+    background-color: white;
+}
+
+.empty-td {
+    background-color: rgb(211, 211, 211);
+}
+
+td:hover {
+    transform: scale(1.05);
+    transition: transform;
+    transition-duration: 0.5s;
+    box-shadow: 0 0 50px 5px grey;
+}
+
+.cur-date {
+    background-color: rgb(180, 180, 180);
+    color: white;
 }

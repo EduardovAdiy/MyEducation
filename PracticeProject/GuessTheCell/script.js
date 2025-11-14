@@ -8,6 +8,8 @@ let minute = 1;
 let second = 59;
 let milisecond = 99;
 let interval = setInterval(getPastTime, 10);
+let errCount = 0;
+let ErrLimit = 80;
 
 function createBaseDiv () {
     if(document.getElementById("table-div") != null) {
@@ -27,7 +29,7 @@ function createBaseDiv () {
     }
 
     let p = document.createElement("p");
-    p.innerHTML = "Найдено ячеек: " + num;
+    p.innerHTML = "Найдено ячеек: " + num +'. Осталось попыток: ' + (Number(ErrLimit) - Number(errCount));
     p.id = "cellCount";
     p.style.textAlign = "center";
     div.appendChild(p);
@@ -121,17 +123,19 @@ function clickForCell () {
     if (this.className == '' && dataCells.length > 0) {
         if(isRightCell(data)) {
             num += 1;
-            document.getElementById("cellCount").innerHTML = "Найдено ячеек: " + num;
+            document.getElementById("cellCount").innerHTML = "Найдено ячеек: " + num +'. Осталось попыток: ' + (Number(ErrLimit) - Number(errCount));
 
             this.className = 'right';
             this.dataset.id = 'N';
         } else {
             this.className = 'not-right';
             this.dataset.id = 'N';
+            errCount += 1;
+            document.getElementById("cellCount").innerHTML = "Найдено ячеек: " + num +'. Осталось попыток: ' + (Number(ErrLimit) - Number(errCount));
         }
     };
 
-    if (dataCells.length == 0) {
+    if (dataCells.length == 0 || errCount >= ErrLimit) {
         window.clearInterval(interval);
         setTimeout(showResult, 500);
     }
