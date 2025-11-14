@@ -5,11 +5,11 @@ let mode = "rus";
 let body = document.getElementsByTagName("body")[0];
 let textarea = document.getElementById("innerText");
 
-let baseKeys = ['123', 'Backspace', 'Caps Lock', 'Enter', ' ', 'rus', 'eng' ];
+let baseKeys = ['123', 'Backspace', 'Caps Lock', 'Enter', ' ', 'rus', 'eng', 'Очистить'];
 
 let buttonsRus = [
     ['1234567890', 'Backspace'],
-    ['123', 'йцукенгшщзхъ'],
+    ['123', 'йцукенгшщзхъ', 'Очистить'],
     ['Caps Lock', 'фывапролджэ', 'Enter'],
     ['eng','ячсмитьбю.,'],
     [' ']
@@ -17,7 +17,7 @@ let buttonsRus = [
 
 let buttonsEng = [
     ['1234567890', 'Backspace'],
-    ['123', 'qwertyuiop'],
+    ['123', 'qwertyuiop', 'Очистить'],
     ['Caps Lock', 'asdfghjkl', 'Enter'],
     ['rus','zxcvbnm.,'],
     [' ']
@@ -73,7 +73,9 @@ function createKeyboard (arr) {
                     div.appendChild(button);
 
                     button.addEventListener("click", function (){
+                        textarea.focus();
                         textarea.textContent += this.textContent; 
+                        textarea.setSelectionRange(textarea.textContent.length, textarea.textContent.length);
                     })
                 }
             }
@@ -96,9 +98,12 @@ function removeKeyboard() {
 };
 
 function pressBaseKey() {
+    textarea.focus();
+    
     switch(this.textContent) {
         case 'Backspace':
             textarea.textContent = textarea.textContent.substring(0, (textarea.textContent.length - 1));
+            textarea.setSelectionRange(textarea.textContent.length, textarea.textContent.length);
             return;
         case '123':
             removeKeyboard();
@@ -107,6 +112,7 @@ function pressBaseKey() {
             return;
         case 'Enter':
             textarea.textContent += '\n';
+            textarea.setSelectionRange(textarea.textContent.length, textarea.textContent.length);
             return;
         case 'eng':
             removeKeyboard();
@@ -120,6 +126,7 @@ function pressBaseKey() {
             return;
         case ' ':
             textarea.textContent += ' ';
+            textarea.setSelectionRange(textarea.textContent.length, textarea.textContent.length);
             return;
         case 'Caps Lock':
             let buttons = document.getElementsByClassName("button");
@@ -132,6 +139,9 @@ function pressBaseKey() {
                     button.textContent = button.textContent.toLowerCase();
                 }
             };
+            return;
+        case 'Очистить':
+            textarea.textContent = '';
             return;
     }
 };
